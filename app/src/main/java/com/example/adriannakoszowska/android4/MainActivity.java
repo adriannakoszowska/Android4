@@ -4,16 +4,29 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+    EditText wprowadz;
+    TextView wynik;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        wprowadz = (EditText) findViewById(R.id.wprowadz);
+        TextView wynik=(TextView)findViewById(R.id.textView3);
+
+        wynik.setText("");
     }
 
+    public void ClickFuncion(View view) {
+        wynik.setText(wprowadz.getText().toString());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
