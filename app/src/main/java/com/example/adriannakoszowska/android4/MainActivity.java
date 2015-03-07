@@ -36,14 +36,11 @@ public class MainActivity extends ActionBarActivity {
         CheckBox kwotanetto = (CheckBox)view;
         CheckBox skladka = (CheckBox)view;*/
         if (kwotabrutto.isChecked()) {
-            result = (float) (0.8 * wprowadz2);
+            result = (float) (1.34 * wprowadz2);
         }
-        //if (kwotanetto.isChecked()) {
-
-       // }
-        //if (skladka.isChecked()) {
-
-       // }
+        if (kwotanetto.isChecked()) {
+            result = (float) (0.71 * wprowadz2);
+        }
         wynik.setText(Float.toString(result));
     }
 
