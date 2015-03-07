@@ -23,7 +23,7 @@ public class MainActivity extends ActionBarActivity {
         wprowadz = (EditText) findViewById(R.id.wprowadz);
         kwotabrutto = (CheckBox) findViewById(R.id.kwotabrutto);
         kwotanetto = (CheckBox) findViewById(R.id.kwotanetto);
-        skladka = (CheckBox) findViewById(R.id.skladka);
+        //skladka = (CheckBox) findViewById(R.id.skladka);
         wynik=(TextView)findViewById(R.id.textView3);
 
         wynik.setText("");
@@ -39,7 +39,7 @@ public class MainActivity extends ActionBarActivity {
             result = (float) (1.34 * wprowadz2);
         }
         if (kwotanetto.isChecked()) {
-            result = (float) (0.71 * wprowadz2);
+            result = (float) (0.748 * wprowadz2);
         }
         wynik.setText(Float.toString(result));
     }
