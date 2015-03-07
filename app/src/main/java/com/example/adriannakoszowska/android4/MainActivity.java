@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,19 +14,37 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
     EditText wprowadz;
     TextView wynik;
+    CheckBox kwotabrutto, kwotanetto, skladka;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         wprowadz = (EditText) findViewById(R.id.wprowadz);
-        TextView wynik=(TextView)findViewById(R.id.textView3);
+        kwotabrutto = (CheckBox) findViewById(R.id.kwotabrutto);
+        kwotanetto = (CheckBox) findViewById(R.id.kwotanetto);
+        skladka = (CheckBox) findViewById(R.id.skladka);
+        wynik=(TextView)findViewById(R.id.textView3);
 
         wynik.setText("");
     }
 
     public void ClickFuncion(View view) {
-        wynik.setText(wprowadz.getText().toString());
+        float result = 0;
+        float wprowadz2 = Float.parseFloat(wprowadz.getText().toString());
+        /*CheckBox kwotabrutto = (CheckBox)view;
+        CheckBox kwotanetto = (CheckBox)view;
+        CheckBox skladka = (CheckBox)view;*/
+        if (kwotabrutto.isChecked()) {
+            result = (float) (0.8 * wprowadz2);
+        }
+        //if (kwotanetto.isChecked()) {
+
+       // }
+        //if (skladka.isChecked()) {
+
+       // }
+        wynik.setText(Float.toString(result));
     }
 
     @Override
